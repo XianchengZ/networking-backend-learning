@@ -22,7 +22,19 @@ To start four containers at the same time, just run the `run4Contianers.sh` with
 
 The `nginx.conf` file can be found as well.
 
-Current study timestamp: 43:16
+### Section 3 Layer 4 load balancing
+
+There were 5 TCP connections in the above layer 7 load balancing example.
+
+1 between client and NGINX, 4 between Nginx to each node server.
+
+In layer 4 load balancing, it will directly go to the backend and create a NAT (network address translation) table in client server.
+
+There is no location anymore in layer 4.
+
+config file can be found under `layer4-load-balancing/nginx.conf`.
+
+Current study timestamp: 1:01:18
 
 Learning source:
 [youtube membership video from Hussein Nasser](https://www.youtube.com/watch?v=hcw-NjOh8r0&list=PLQnljOFTspQX8hkaqYiei8O2mqRIfxBm-&index=10)
