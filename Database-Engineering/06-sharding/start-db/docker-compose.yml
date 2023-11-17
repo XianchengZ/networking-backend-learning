@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  pgshard1:
+    image: pgshard
+    container_name: pgshard1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata1:/var/lib/postgresql/data
+
+  pgshard2:
+    image: pgshard
+    container_name: pgshard2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5433:5432'
+    volumes:
+      - pgdata2:/var/lib/postgresql/data
+
+  pgshard3:
+    image: pgshard
+    container_name: pgshard3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5434:5432'
+    volumes:
+      - pgdata3:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - '5555:80'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  pgadmin-data:
+  pgdata1:
+  pgdata2:
+  pgdata3:
