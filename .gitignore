@@ -2,3 +2,4 @@ node_modules
 docker-networking.pdf
 Fundamentals+of+Networking+for+Effective+Backends-v5.pdf
 proxy+vs+reverse+proxy.pdf
+*.pdf
